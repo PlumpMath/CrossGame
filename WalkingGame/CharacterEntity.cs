@@ -43,47 +43,50 @@ namespace WalkingGame
                 }
             }
 
+            const int size = 32;
+            const int line = 3;
+
             // AddFrame adds a single frame of animation.
             // The Rectagle parameter defines which region of the source image to display.
             // The parameters are Left, Top, Width, Height
             // The TimeSpan parameter defines how long each frame will display
             // In this case we'll show each frame for .25 seconds
             walkDown = new Animation();
-            walkDown.AddFrame(new Rectangle(0, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkDown.AddFrame(new Rectangle(16, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkDown.AddFrame(new Rectangle(0, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkDown.AddFrame(new Rectangle(32, 0, 16, 16), TimeSpan.FromSeconds(.25));
-
-            walkUp = new Animation();
-            walkUp.AddFrame(new Rectangle(144, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkUp.AddFrame(new Rectangle(160, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkUp.AddFrame(new Rectangle(144, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkUp.AddFrame(new Rectangle(176, 0, 16, 16), TimeSpan.FromSeconds(.25));
+            walkDown.AddFrame(new Rectangle(0 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkDown.AddFrame(new Rectangle(1 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkDown.AddFrame(new Rectangle(0 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkDown.AddFrame(new Rectangle(2 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
 
             walkLeft = new Animation();
-            walkLeft.AddFrame(new Rectangle(48, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkLeft.AddFrame(new Rectangle(64, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkLeft.AddFrame(new Rectangle(48, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkLeft.AddFrame(new Rectangle(80, 0, 16, 16), TimeSpan.FromSeconds(.25));
+            walkLeft.AddFrame(new Rectangle(9 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkLeft.AddFrame(new Rectangle(10 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkLeft.AddFrame(new Rectangle(9 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkLeft.AddFrame(new Rectangle(11 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
 
             walkRight = new Animation();
-            walkRight.AddFrame(new Rectangle(96, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkRight.AddFrame(new Rectangle(112, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkRight.AddFrame(new Rectangle(96, 0, 16, 16), TimeSpan.FromSeconds(.25));
-            walkRight.AddFrame(new Rectangle(128, 0, 16, 16), TimeSpan.FromSeconds(.25));
+            walkRight.AddFrame(new Rectangle(3 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkRight.AddFrame(new Rectangle(4 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkRight.AddFrame(new Rectangle(3 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkRight.AddFrame(new Rectangle(5 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+
+            walkUp = new Animation();
+            walkUp.AddFrame(new Rectangle(6 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkUp.AddFrame(new Rectangle(7 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkUp.AddFrame(new Rectangle(6 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
+            walkUp.AddFrame(new Rectangle(8 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
 
             // Standing animations only have a single frame of animation:
             standDown = new Animation();
-            standDown.AddFrame(new Rectangle(0, 0, 16, 16), TimeSpan.FromSeconds(.25));
+            standDown.AddFrame(new Rectangle(0 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
 
             standUp = new Animation();
-            standUp.AddFrame(new Rectangle(144, 0, 16, 16), TimeSpan.FromSeconds(.25));
+            standUp.AddFrame(new Rectangle(6 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
 
             standLeft = new Animation();
-            standLeft.AddFrame(new Rectangle(48, 0, 16, 16), TimeSpan.FromSeconds(.25));
+            standLeft.AddFrame(new Rectangle(8 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
 
             standRight = new Animation();
-            standRight.AddFrame(new Rectangle(96, 0, 16, 16), TimeSpan.FromSeconds(.25));
+            standRight.AddFrame(new Rectangle(3 * size, line * size, size, size), TimeSpan.FromSeconds(.25));
         }
 
         public void Draw(SpriteBatch spriteBatch)
